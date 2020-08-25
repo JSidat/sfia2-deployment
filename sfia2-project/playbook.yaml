@@ -1,17 +1,15 @@
 - name: Install docker
-  hosts: servers
+  hosts: swarm-manager
+  connection: local
   become: true
   roles:
     - docker-installation
-
-- name: Create docker swarm
-  hosts: swarm-manager
-  become: true
-  roles:
     - docker-swarm-init
   
 - name: Add worker to swarm
   hosts: swarm-worker
   become: true
   roles:
+    - docker-installation
     - docker-swarm-add-worker
+    
