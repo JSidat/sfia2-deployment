@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+	<head>			
+		<title>{{ title }}</title>
+		
+    </head>
+	<body>
+		
+		<h1>Football Team Names</h1>
+		
+		
+		<p>{{ result }}</p>
+		<button onclick="window.location.reload();">
+			Generate Team Name
+		</button>
+		{% for name in teamname %}
+        	<h4>{{ name.teamname }}</h4>
+		{% endfor %}
+        
+	</body>
+</html>
