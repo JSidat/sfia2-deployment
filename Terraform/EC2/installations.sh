@@ -8,12 +8,22 @@ sudo apt-get update
 sudo apt-get install jenkins -y
 
 
+
+# Installing Ansible
+sudo apt install python3-pip
+mkdir -p ~/.local/bin
+echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
+source ~/.bashrc
+pip3 install --user ansible 
+
 #AWS CLI Install
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 sudo apt install unzip -y
 unzip awscliv2.zip
 sudo ./aws/install
 
+
+#install terraform 
 figlet Terra-Plug
 
 sudo apt update && sudo apt upgrade -y
@@ -36,10 +46,3 @@ rm terraform_*_linux_*.zip
 echo ""
 
 terraform --version
-
-# Installing Ansible
-sudo apt install python3-pip
-mkdir -p ~/.local/bin
-echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
-source ~/.bashrc
-pip3 install --user ansible 
