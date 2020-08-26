@@ -4,13 +4,15 @@ sudo apt install openjdk-8-jdk -y
 
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install jenkins -y
 
 
 
+
+
 # Installing Ansible
-sudo apt install python3-pip
+sudo apt install python3-pip -y
 mkdir -p ~/.local/bin
 echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
 source ~/.bashrc
@@ -24,15 +26,12 @@ sudo ./aws/install
 
 
 #install terraform 
-figlet Terra-Plug
 
 sudo apt update && sudo apt upgrade -y
 
 # Aquire the terraform tools.
 wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
 
-# Install unzip
-sudo apt install unzip
 
 # Unzip Terraform Tools
 unzip terraform_*_linux_*.zip
