@@ -14,7 +14,7 @@ resource "aws_instance" "web_server" {
 }
 
 data "template_file" "installations" {
-  template = file("C:/Users/Junaid/OneDrive/QA academy/SFIA2_DEPLOYMENT/sfia2-deployment/sfia2-deployment/Terraform/EC2/installations.sh")
+  template = file("../Terraform/scripts/installations.sh")
 }   
 
 

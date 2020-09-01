@@ -1,5 +1,15 @@
 #!/bin/bash
 sudo apt update -y
+
+# Installing Ansible
+sudo apt install python3-pip -y
+mkdir -p ~/.local/bin
+echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
+source ~/.bashrc
+pip3 install --user ansible 
+
+
+#install jenkins
 sudo apt install openjdk-8-jdk -y 
 
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
@@ -16,22 +26,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 
 
-#install terraform 
 
-sudo apt update -y
-
-# Aquire the terraform tools.
-wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip 
-
-
-# Unzip Terraform Tools
-unzip terraform_*_linux_*.zip
-
-# Move file to executable location
-sudo mv terraform /usr/local/bin
-
-# Remove the zip file
-rm terraform_*_linux_*.zip
 
 
 
