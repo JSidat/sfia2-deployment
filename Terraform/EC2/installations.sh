@@ -33,8 +33,5 @@ sudo mv terraform /usr/local/bin
 # Remove the zip file
 rm terraform_*_linux_*.zip
 
-echo ""
+sh ../../Terraform/EC2/ansible.sh
 
-terraform --version
-
-sh C:/Users/Junaid/OneDrive/QA academy/SFIA2_DEPLOYMENT/sfia2-deployment/sfia2-deployment/Terraform/EC2/ansible.sh
