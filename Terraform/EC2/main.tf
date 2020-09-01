@@ -20,10 +20,6 @@ data "template_file" "installations" {
 
 
  
-
-
-
-
 resource "aws_instance" "worker" {
     ami = var.ami
     instance_type = var.instance_type

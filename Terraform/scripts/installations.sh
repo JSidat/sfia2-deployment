@@ -8,6 +8,7 @@ echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
 source ~/.bashrc
 pip3 install --user ansible 
 
+sleep 20
 
 #install jenkins
 sudo apt install openjdk-8-jdk -y 
@@ -17,7 +18,7 @@ sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.li
 sudo apt-get update -y
 sudo apt-get install jenkins -y
 
-
+sleep 20
 
 #AWS CLI Install
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
