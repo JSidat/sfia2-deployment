@@ -21,7 +21,7 @@ sudo ./aws/install
 sudo apt update -y
 
 # Aquire the terraform tools.
-wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip 
 
 
 # Unzip Terraform Tools
@@ -33,5 +33,7 @@ sudo mv terraform /usr/local/bin
 # Remove the zip file
 rm terraform_*_linux_*.zip
 
-sh ../../Terraform/EC2/ansible.sh
+
+
+
 
