@@ -31,3 +31,4 @@ module "rds" {
   username = var.username
   password = var.password
 }
+

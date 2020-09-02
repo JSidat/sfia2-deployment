@@ -5,16 +5,21 @@ resource "aws_instance" "web_server" {
     vpc_security_group_ids = var.vpc_security_group_ids
     subnet_id = var.public_subnet_id
     associate_public_ip_address = var.associate_public_ip_address
-    user_data = var.user_data
-
-
-tags = {
-    Name = "Web_server"
-}   
+    user_data = data.template_file.installations.rendered
+    
+    tags = {
+        Name = "Web_server"
+}
 
 }
 
+data "template_file" "installations" {
+  template = file("../Terraform/scripts/installations.sh")
+}   
 
+
+
+ 
 resource "aws_instance" "worker" {
     ami = var.ami
     instance_type = var.instance_type
