@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Make scripts executable"){
             steps{
-                sh 'chmod +x ./script/*'
+                sh 'chmod +x ./sfia2-project/script/*'
             }
         }
         
