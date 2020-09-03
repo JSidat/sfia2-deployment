@@ -1,11 +1,10 @@
-- name: manager node- Install docker, create swarm, install jenkins
+- name: manager node- Install docker, create swarm
   hosts: swarm-manager
   connection: local
   become: true
   roles:
     - docker-installation
     - docker-swarm-init
-    - jenkins
   
 - name: Add worker to swarm
   hosts: swarm-worker
