@@ -1,0 +1,14 @@
+- name: manager node- Install docker, create swarm
+  hosts: swarm-manager
+  connection: local
+  become: true
+  roles:
+    - docker-installation
+    - docker-swarm-init
+  
+- name: Add worker to swarm
+  hosts: swarm-worker
+  become: true
+  roles:
+    - docker-installation
+    - docker-swarm-add-worker

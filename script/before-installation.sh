@@ -2,7 +2,7 @@
 
 apt install -y python 
 
-apt install -y python-pip
+apt install -y python3-pip
 
 
 mkdir -p ~/.local/bin

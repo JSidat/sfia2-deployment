@@ -9,10 +9,18 @@ pipeline{
         
         stage("Ansible Setup"){
             steps{
-                sh 'bash ./script/before-installation.sh'
+                sh './script/before-installation.sh'
                 sh './script/ansible.sh'
             }
         }
+        
+        stage("configure jenkins"){
+            steps{
+                sh './script/jenkins.sh'
+            }
+        }
+        
+
         stage("Deploy Docker Swarm"){
             steps{
                 sh './script/docker.sh'

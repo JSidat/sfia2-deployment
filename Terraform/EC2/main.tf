@@ -14,7 +14,7 @@ resource "aws_instance" "web_server" {
 }
 
 data "template_file" "installations" {
-  template = file("../Terraform/scripts/installations.sh")
+  template = file("../Terraform/EC2/installations.sh")
 }   
 
 

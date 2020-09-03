@@ -23,12 +23,12 @@ module "sg" {
 
 }
 
-module "rds" {
-  source = "./RDS"
-  private_sg_id = ["${module.sg.private_sg_id}"]
-  public-subnet-1 = module.vpc.public_subnet
-  private-subnet-1 = module.vpc.private_subnet
-  username = var.username
-  password = var.password
-}
+#module "rds" {
+ # source = "./RDS"
+  #private_sg_id = ["${module.sg.private_sg_id}"]
+  #public-subnet-1 = module.vpc.public_subnet
+  #private-subnet-1 = module.vpc.private_subnet
+  #username = var.username
+  #password = var.password
+#}
 
