@@ -26,13 +26,4 @@ variable "associate_public_ip_address" {
     default = true
     }
 
-variable "user_data" {
-    description = "ami"
-    default = "data.template_file.installing_jenkins.rendered"
 
-
-}
-
-data "template_file" "installing_jenkins" {
-  template = file("../SFIA2_DEPLOYMENT/EC2/jenkins.sh")
-}
