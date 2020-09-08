@@ -1,21 +1,10 @@
-- name: Check current docker-compose version
-  command: docker-compose --version
-  register: docker_compose_vsn
-  changed_when: false
-  failed_when: false
-  check_mode: no
+- name: Check Docker compose bin file presence
+  stat: path=/usr/local/bin/docker-compose
+  register: dockercompose
 
-- set_fact:
-    docker_compose_current_version: "{{ docker_compose_vsn.stdout | regex_search('(\\d+(\\.\\d+)+)') }}"
-  when:
-    - docker_compose_vsn.stdout is defined
+- name: Install docker compose
+  shell: curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  when: dockercompose.stat.exists == false
 
-- name: Install or upgrade docker-compose
-  get_url: 
-    url : "https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64"
-    dest: /usr/local/bin/docker-compose
-    mode: 'a+x'
-    force: yes
-  when: >
-    docker_compose_current_version is not defined
-    or docker_compose_current_version is version(docker_compose_version, '<')
+- name: Apply executable permission
+  file: path=/usr/local/bin/docker-compose mode="u+x,g+x"
