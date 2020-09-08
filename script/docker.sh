@@ -1,11 +1,11 @@
 #!/bin/bash
 source ~/.bashrc
 
-docker-compose build
+sudo docker-compose build
 
-docker push junaidsidat95/sfia2-images:service_1
-docker push junaidsidat95/sfia2-images:service_2
-docker push junaidsidat95/sfia2-images:service_3
-docker push junaidsidat95/sfia2-images:service_4
+sudo docker push junaidsidat95/sfia2-images:service_1
+sudo docker push junaidsidat95/sfia2-images:service_2
+sudo docker push junaidsidat95/sfia2-images:service_3
+sudo docker push junaidsidat95/sfia2-images:service_4
 
-docker stack deploy -c docker-compose.yaml sfia2
+sudo docker stack deploy -c docker-compose.yaml sfia2
