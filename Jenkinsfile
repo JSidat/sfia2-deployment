@@ -14,11 +14,6 @@ pipeline{
             }
         }
         
-        stage("configure jenkins"){
-            steps{
-                sh './script/jenkins.sh'
-            }
-        }
         
 
         stage("Deploy Docker Swarm"){
